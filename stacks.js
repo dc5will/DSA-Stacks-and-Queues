@@ -113,5 +113,45 @@ function is_palindrome(s) {
 console.log(is_palindrome("dad"));
 console.log(is_palindrome("A man, a plan, a canal: Panama"));
 console.log(is_palindrome("1001"));
-console.log(is_palindrome("Tauhida"));
+console.log(is_palindrome("William"));
+
+// 4. Matching parentheses in an expression
+// A stack can be used to ensure that an arithmetic expression has balanced parentheses. Write a function that takes an arithmetic expression as an argument and returns true or false based on matching parenthesis. As a bonus provide a meaningful error message to the user as to what's missing. For example, you are missing a ( or missing a ")".
+
+
+// 5. Sort Stack
+// Write a program to sort a stack such that the smallest items are on the top (in ascending order). You can use an additional stack, but you may not use any other data structure (such as an array, or linked list).
+
+function sort(stack) {
+    let tempStack = new Stack();
+    let tempValue;
+
+    while(!isEmpty(stack)) { // when stack isnt empty
+        tempValue = stack.pop(); // remove nodes from stack
+
+        while(peek(tempStack) > tempValue && tempStack.top !== null) {
+            // if top of stack is greater than tempStack, then add it to stack
+            stack.push(tempStack.pop());
+        }
+        tempStack.push(tempValue);
+    }
+
+    while(!isEmpty(tempStack)) {
+        stack.push(tempStack.pop());
+    }
+    // console.log('stack ===', stack);
+    return stack;
+}
+
+let sortInput = new Stack();
+sortInput.push(12);
+sortInput.push(24);
+sortInput.push(55);
+// sortInput.push(2);
+// console.log(sortInput);
+console.log(sort(sortInput));
+
+
+
+
 
