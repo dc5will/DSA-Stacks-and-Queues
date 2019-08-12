@@ -90,3 +90,28 @@ function display(stack) {
     }
 }
 
+// 3. Check for palindromes using a stack
+// Write an algorithm that uses a stack to determine whether a given input is palindrome or not.
+function is_palindrome(s) {
+    s = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
+
+    let newStack = new Stack();
+    for (let i = 0; i < s.length; i++) {
+        newStack.push(s[i]);
+    }
+
+    let newString = '';
+    for (let i = 0; i < s.length; i++) {
+        newString += newStack.pop();
+    }
+    console.log('newstring =', newString)
+    console.log('s =', s)
+    return newString === s;
+}
+
+// True, true, true, false
+console.log(is_palindrome("dad"));
+console.log(is_palindrome("A man, a plan, a canal: Panama"));
+console.log(is_palindrome("1001"));
+console.log(is_palindrome("Tauhida"));
+
