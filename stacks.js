@@ -46,8 +46,41 @@ starTrek.push('Kirk')
 starTrek.push('Spock')
 starTrek.push('McCoy')
 starTrek.push('Scotty')
+console.log(peek('peek ===', starTrek));
+console.log(isEmpty('isEmpty ===', starTrek));
+// display('display ===', starTrek);
 
 console.log(starTrek); // returns 'Scotty' on top and 'McCoy' second
 
+/*
+2. Useful methods for a stack
+implement helper functions outside of the class:
+peek(): allows you to look at the top of the stack without removing it
+isEmpty(): allows you to check if the stack is empty or not
+display(): to display the stack - what is the 1st item in the stack
+Remove McCoy from the stack and display the stack
+*/
 
+function peek(stack) {
+    if (stack.top === null) { // checks if stack is empty
+        return null;
+    }
+    // console.log('peek =', starTrek.top.data)
+    return starTrek.top.data;
+}
+
+function isEmpty(stack) {
+    if (stack.top === null) { // if list is empty return true;
+        return true;
+    } 
+    return false;
+}
+
+function display(stack) {
+    let node = stack.top; // set variable for top of stack
+    while (node !== null) { // iterate through stack as long current node has data
+        console.log(node.data); // display data inside current node
+        node = node.next; // move to next node
+    }
+}
 
