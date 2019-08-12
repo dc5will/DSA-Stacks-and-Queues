@@ -57,6 +57,23 @@ function peek(queue) {
     return queue.first.value;
 }
 
+// implement a isEmpty() function outside the Queue class that allows you to check if the queue is empty or not
+function isEmpty(queue) {
+    if (queue.first === null) {
+        return true;
+    } return false;
+}
+
+// implement a display() function outside of the Queue class that lets you display what's in the queue
+function display(queue) {
+    let node = queue.first; // set variable for first node
+    while (node !== null) {
+        console.log(node.value);
+        node = node.next; // move pointer to next node
+    }
+}
+
+
 // Create a queue using Singly linked list
 let starTrekQ = new Queue();
 starTrekQ.enqueue('Kirk')
@@ -66,5 +83,7 @@ starTrekQ.enqueue('Sulu')
 starTrekQ.enqueue('Checkov')
 console.log(starTrekQ);
 
-console.log(peek(starTrekQ));
+console.log(peek(starTrekQ)); // returns Kirk
+console.log(isEmpty(starTrekQ)); // returns false
+console.log(display(starTrekQ)); // returns valid results
 
