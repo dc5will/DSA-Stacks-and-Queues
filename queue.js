@@ -49,8 +49,15 @@ class Queue {
     }
 }
 
-// Create a queue using Singly linked list
+// implement a peek() function that looks at first item in the queue
+function peek(queue) {
+    if (queue.first === null) {
+        return null;
+    }
+    return queue.first.value;
+}
 
+// Create a queue using Singly linked list
 let starTrekQ = new Queue();
 starTrekQ.enqueue('Kirk')
 starTrekQ.enqueue('Spock')
@@ -58,4 +65,6 @@ starTrekQ.enqueue('Uhura')
 starTrekQ.enqueue('Sulu')
 starTrekQ.enqueue('Checkov')
 console.log(starTrekQ);
+
+console.log(peek(starTrekQ));
 

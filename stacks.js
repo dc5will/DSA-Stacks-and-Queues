@@ -133,6 +133,7 @@ function sort(stack) {
             // if top of stack is greater than tempStack, then add it to stack
             stack.push(tempStack.pop());
         }
+        // push temp in tempory stack
         tempStack.push(tempValue);
     }
 
