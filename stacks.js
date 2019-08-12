@@ -48,7 +48,8 @@ starTrek.push('McCoy')
 starTrek.push('Scotty')
 console.log(peek('peek ===', starTrek));
 console.log(isEmpty('isEmpty ===', starTrek));
-// display('display ===', starTrek);
+console.log('starTrek ===', starTrek);
+console.log(display(starTrek));
 
 console.log(starTrek); // returns 'Scotty' on top and 'McCoy' second
 
@@ -78,8 +79,9 @@ function isEmpty(stack) {
 
 function display(stack) {
     let node = stack.top; // set variable for top of stack
+    // console.log('line 81 ===', node)
     while (node !== null) { // iterate through stack as long current node has data
-        console.log(node.data); // display data inside current node
+        console.log('display ===', node.data); // display data inside current node
         node = node.next; // move to next node
     }
 }
