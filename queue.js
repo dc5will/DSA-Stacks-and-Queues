@@ -81,9 +81,13 @@ starTrekQ.enqueue('Spock')
 starTrekQ.enqueue('Uhura')
 starTrekQ.enqueue('Sulu')
 starTrekQ.enqueue('Checkov')
-console.log(starTrekQ);
+// console.log(starTrekQ);
 
-console.log(peek(starTrekQ)); // returns Kirk
-console.log(isEmpty(starTrekQ)); // returns false
-console.log(display(starTrekQ)); // returns valid results
+// console.log(peek(starTrekQ)); // returns Kirk
+// console.log(isEmpty(starTrekQ)); // returns false
+// console.log(display(starTrekQ)); // returns valid results
+starTrekQ.dequeue();
+starTrekQ.dequeue();
+console.log(display(starTrekQ)) // removes Kirk and Spock from the beginning of the queue. Displays rest of queue
+
 
