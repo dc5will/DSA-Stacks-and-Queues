@@ -50,8 +50,12 @@ console.log(peek('peek ===', starTrek));
 console.log(isEmpty('isEmpty ===', starTrek));
 console.log('starTrek ===', starTrek);
 console.log(display(starTrek));
+// remove McCoy from stack
+starTrek.pop();
+starTrek.pop();
+// popped twice to remove McCoy;
 
-console.log(starTrek); // returns 'Scotty' on top and 'McCoy' second
+console.log(display(starTrek)); // returns 'Scotty' on top and 'McCoy' second
 
 /*
 2. Useful methods for a stack
