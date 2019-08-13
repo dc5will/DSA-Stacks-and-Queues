@@ -74,7 +74,8 @@ function display(queue) {
 }
 
 
-// Create a queue using Singly linked list
+//============== Create a queue using Singly linked list ==================
+// TODO: Create a queue called starTrekQ and add Kirk, Spock, Uhura, Sulu, and Checkov to the queue.
 let starTrekQ = new Queue();
 starTrekQ.enqueue('Kirk')
 starTrekQ.enqueue('Spock')
@@ -83,11 +84,35 @@ starTrekQ.enqueue('Sulu')
 starTrekQ.enqueue('Checkov')
 // console.log(starTrekQ);
 
+// TODO: Implement a peek() function outside of the Queue class that lets you take a peek at what the 1st item in the queue is.
 // console.log(peek(starTrekQ)); // returns Kirk
+
+// TODO: Implement a isEmpty() function outside the Queue class that allows you to check if the queue is empty or not.
 // console.log(isEmpty(starTrekQ)); // returns false
+
+// TODO: Implement a display() function outside of the Queue class that lets you display what's in the queue.
 // console.log(display(starTrekQ)); // returns valid results
+
+// TODO: Remove Spock from the queue and display the resulting queue.
 starTrekQ.dequeue();
 starTrekQ.dequeue();
+
 console.log(display(starTrekQ)) // removes Kirk and Spock from the beginning of the queue. Displays rest of queue
+
+
+//============== The Ophidian Bank =========================
+// TODO: At the Ophidian Bank, a single teller serves a long queue of people. New customers join the end of the queue, and the teller will serve a customer only if they have all of the appropriate paperwork. Write a representation of this queue; 25% of the time (random), a customer's paperwork isn't quite right, and it's back to the end of the queue. Show what a few minutes of the bank's lobby would look like.
+
+function ophidianLine(line) {
+    while(line.first !== null) {
+        console.log('next step');
+        display(line);
+        let current = line.dequeue();
+        if (Math.floor(Math.random()*4) === 3) {
+          line.enqueue(current);
+        }
+      }
+}
+
 
 
