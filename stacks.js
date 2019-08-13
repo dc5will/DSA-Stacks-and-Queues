@@ -152,6 +152,37 @@ sortInput.push(55);
 // console.log(sortInput);
 console.log(sort(sortInput));
 
+//=============== Queue implementation using a stack ========================
+// TODO: implement a queue using 2 stacks and no other data structure. (You are not allowed to use a doubly linked list or array. Use your stack implementation with a linked list from above to solve this problem.)
+
+class stackQueue {
+    constructor() {
+        this.inputStack = new Stack();
+        this.outputStack = new Stack();
+    }
+
+    enqueue(data) {
+        if (isEmpty(this.inputStack)) {
+            this.inputStack.push(data);
+        } else {
+            this.outputStack.push(data);
+        }
+    }
+
+    dequeue() {
+        if (isEmpty(this.inputStack)) {
+            return null;
+        }
+        let result = this.inputStack.pop();
+        if (isEmpty(this.inputStack)) {
+            while (!isEmpty(this.outputStack)) {
+                this.inputStack.push(this.outputStack.pop());
+            }
+        }
+        return result;
+    }
+}
+
 
 
 
